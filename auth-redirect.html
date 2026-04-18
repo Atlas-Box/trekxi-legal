@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trekxi — Ouverture de l'application</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a2035;
+    --primary: #00BFA6;
+    --primary-light: #2DD4BF;
+    --text: #ffffff;
+    --text2: rgba(255,255,255,0.72);
+    --text3: rgba(255,255,255,0.45);
+    --border: rgba(255,255,255,0.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text2);
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'DM Sans', sans-serif;
+    line-height: 1.6; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+  }
+  .card {
+    max-width: 460px; width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 40px 32px;
+    text-align: center;
+  }
+  .logo {
+    font-size: 36px; font-weight: 800;
+    color: var(--text); margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+  .logo span { color: var(--primary); }
+  .tagline {
+    color: var(--text3); font-size: 13px;
+    margin-bottom: 32px;
+  }
+  .icon {
+    width: 72px; height: 72px;
+    border-radius: 36px;
+    background: rgba(0,191,166,0.1);
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    margin-bottom: 20px; font-size: 36px;
+  }
+  h1 {
+    color: var(--text); font-size: 22px;
+    font-weight: 700; margin-bottom: 12px;
+  }
+  p { font-size: 14px; margin-bottom: 16px; }
+  .cta {
+    display: inline-block;
+    background: var(--primary);
+    color: var(--bg) !important;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 14px;
+    font-weight: 700; font-size: 15px;
+    margin-top: 16px;
+    transition: transform 0.15s;
+  }
+  .cta:hover { transform: translateY(-1px); }
+  .small {
+    color: var(--text3); font-size: 12px;
+    margin-top: 24px; padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+  .small a { color: var(--primary); text-decoration: none; }
+  .countdown {
+    color: var(--primary); font-weight: 700;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo"><span>Trekxi</span></div>
+  <p class="tagline">Every place, every story</p>
+
+  <div class="icon">🔐</div>
+  <h1 id="title">Réinitialisation du mot de passe</h1>
+  <p id="desc">Ouverture de l'application Trekxi…</p>
+
+  <a id="open-link" class="cta" href="#">Ouvrir Trekxi</a>
+
+  <p class="small">
+    L'application ne s'est pas ouverte ? Assurez-vous que Trekxi est bien installé sur votre appareil, puis tapez sur le bouton ci-dessus.
+  </p>
+</div>
+
+<script>
+  // Le fragment URL contient access_token + refresh_token + type=recovery
+  // (ou type=signup, type=magiclink, etc.). On le passe tel quel a l'app
+  // pour que le hook RootNavigator puisse parser et appeler setSession.
+  (function () {
+    var fragment = window.location.hash || '';
+    var search = window.location.search || '';
+    var deepLink = 'trekxi://reset-password' + fragment + (fragment ? '' : search);
+
+    // Auto-ouverture de l'app
+    document.getElementById('open-link').setAttribute('href', deepLink);
+    setTimeout(function () { window.location.href = deepLink; }, 400);
+
+    // Detection langue navigateur pour traduire si EN
+    if ((navigator.language || '').toLowerCase().startsWith('en')) {
+      document.documentElement.lang = 'en';
+      document.getElementById('title').textContent = 'Reset password';
+      document.getElementById('desc').textContent = 'Opening the Trekxi app…';
+      document.querySelector('.tagline').textContent = 'Every place, every story';
+      document.getElementById('open-link').textContent = 'Open Trekxi';
+      document.querySelector('.small').innerHTML = "App didn't open? Make sure Trekxi is installed on your device, then tap the button above.";
+    }
+  })();
+</script>
+</body>
+</html>
