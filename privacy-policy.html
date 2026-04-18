@@ -1,49 +1,278 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Politique de confidentialité — Trekxi</title>
-  <style>
-    body { font-family: sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; color: #333; }
-    h1 { color: #00BFA6; }
-    h2 { margin-top: 32px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trekxi — Politique de confidentialité / Privacy Policy</title>
+<meta name="description" content="Politique de confidentialité de l'application Trekxi — données collectées, RGPD, services tiers.">
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a2035;
+    --primary: #00BFA6;
+    --primary-light: #2DD4BF;
+    --text: #ffffff;
+    --text2: rgba(255,255,255,0.72);
+    --text3: rgba(255,255,255,0.45);
+    --border: rgba(255,255,255,0.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--text2);
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'DM Sans', sans-serif;
+    line-height: 1.7; font-size: 15px;
+  }
+  .container { max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; }
+  .lang-switch {
+    display: flex; gap: 8px; margin-bottom: 32px;
+    padding: 4px; background: var(--surface); border-radius: 12px;
+    width: fit-content; border: 1px solid var(--border);
+  }
+  .lang-btn {
+    background: transparent; border: none; color: var(--text3);
+    padding: 8px 18px; border-radius: 8px; cursor: pointer;
+    font-size: 13px; font-weight: 600; transition: all 0.2s;
+  }
+  .lang-btn.active { background: var(--primary); color: var(--bg); }
+  h1 { color: var(--text); font-size: 30px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.02em; }
+  h1 span { color: var(--primary); }
+  .subtitle { color: var(--text3); font-size: 13px; margin-bottom: 40px; }
+  h2 {
+    color: var(--text); font-size: 19px; font-weight: 700;
+    margin-top: 36px; margin-bottom: 12px;
+    padding-bottom: 8px; border-bottom: 1px solid var(--border);
+  }
+  h3 { color: var(--primary); font-size: 14px; font-weight: 700; margin-top: 18px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+  p { margin-bottom: 12px; }
+  ul { padding-left: 0; list-style: none; }
+  li { margin-bottom: 6px; padding-left: 20px; position: relative; }
+  li::before { content: '•'; color: var(--primary); position: absolute; left: 4px; font-weight: bold; }
+  a { color: var(--primary); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang { display: none; }
+  .lang.active { display: block; }
+  .nav-links { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; }
+  .nav-links a { color: var(--text3); }
+  .nav-links a:hover { color: var(--primary); }
+  @media (max-width: 600px) {
+    h1 { font-size: 24px; }
+    h2 { font-size: 17px; }
+    body { font-size: 14px; }
+  }
+</style>
 </head>
 <body>
-  <h1>Politique de confidentialité — Trekxi</h1>
-  <p><em>Dernière mise à jour : 15 avril 2026</em></p>
+<div class="container">
 
-  <h2>1. Données collectées</h2>
-  <p>Trekxi collecte les données suivantes :</p>
-  <ul>
-    <li>Adresse email (création de compte)</li>
-    <li>Localisation GPS (affichage des lieux et météo à proximité)</li>
-    <li>Photos soumises volontairement</li>
-    <li>Avis et notes sur les lieux</li>
-  </ul>
+<div class="lang-switch" role="tablist">
+  <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')">Français</button>
+  <button class="lang-btn" data-lang="en" onclick="setLang('en')">English</button>
+</div>
 
-  <h2>2. Utilisation des données</h2>
-  <p>Vos données sont utilisées uniquement pour :</p>
-  <ul>
-    <li>Personnaliser votre expérience dans l'application</li>
-    <li>Afficher les lieux et la météo à proximité</li>
-    <li>Gérer votre compte utilisateur</li>
-    <li>Améliorer le contenu de l'application</li>
-  </ul>
+<!-- ─── FRANÇAIS ────────────────────────────────────────────────── -->
+<div class="lang active" id="lang-fr">
 
-  <h2>3. Partage des données</h2>
-  <p>Vos données ne sont jamais vendues à des tiers. Elles peuvent être partagées avec :</p>
-  <ul>
-    <li>Supabase (hébergement base de données, UE)</li>
-    <li>Google AdMob (publicités, identifiant publicitaire uniquement)</li>
-    <li>Open-Meteo (météo, localisation approximative uniquement)</li>
-  </ul>
+<h1><span>Trekxi</span> — Politique de confidentialité</h1>
+<p class="subtitle">Dernière mise à jour : 18 avril 2026</p>
 
-  <h2>4. Suppression des données</h2>
-  <p>Vous pouvez supprimer votre compte et toutes vos données depuis l'application ou en nous contactant à : <a href="mailto:amineelmahlali5@gmail.com">amineelmahlali5@gmail.com</a></p>
+<p>Trekxi est une application mobile de découverte touristique. Cette politique de confidentialité décrit les données que nous collectons, pourquoi nous les collectons, et comment nous les protégeons.</p>
 
-  <h2>5. Contact</h2>
-  <p>Pour toute question : <a href="mailto:amineelmahlali5@gmail.com">amineelmahlali5@gmail.com</a></p>
+<h2>1. Données collectées</h2>
+
+<h3>Compte utilisateur</h3>
+<p>Adresse email, nom d'affichage, photo de profil (optionnel). Utilisées pour l'authentification, la personnalisation et l'attribution des contributions.</p>
+
+<h3>Géolocalisation</h3>
+<p>Position GPS (latitude, longitude). Utilisée pour afficher les lieux à proximité, la météo locale et la carte. Votre position n'est accédée que lorsque vous utilisez l'application (pas en arrière-plan). Vous pouvez refuser cette permission dans les réglages de votre appareil.</p>
+
+<h3>Contributions</h3>
+<p>Soumissions de lieux, avis, photos, signalements. Utilisées pour enrichir la base de données communautaire.</p>
+
+<h3>Préférences</h3>
+<p>Langue, unités de mesure, favoris, thème. Stockées localement et/ou sur nos serveurs pour la personnalisation.</p>
+
+<h3>Données techniques</h3>
+<p>Type d'appareil, version OS, identifiant publicitaire (si consenti). Utilisées pour la compatibilité, le diagnostic et la publicité personnalisée.</p>
+
+<h2>2. Base légale (RGPD)</h2>
+<ul>
+  <li>Consentement : publicité personnalisée, notifications push, tracking (ATT sur iOS)</li>
+  <li>Exécution du contrat : création de compte, fonctionnalités de l'app</li>
+  <li>Intérêt légitime : amélioration du service, prévention des abus, modération</li>
+</ul>
+
+<h2>3. Services tiers</h2>
+<ul>
+  <li><strong>Supabase</strong> — backend, authentification, base de données (AWS, région EU)</li>
+  <li><strong>Cloudflare R2</strong> — hébergement des photos soumises par les utilisateurs</li>
+  <li><strong>Google AdMob</strong> — publicité (identifiant publicitaire si consenti)</li>
+  <li><strong>Open-Meteo</strong> — données météo (coordonnées GPS sans identifiant)</li>
+  <li><strong>Google OAuth / Apple Sign-in</strong> — connexion (email, nom)</li>
+  <li><strong>Google Maps</strong> — affichage de la carte sur Android</li>
+</ul>
+
+<h2>4. Publicité et consentement</h2>
+<p>Trekxi affiche des publicités via Google AdMob. Avant toute collecte de données publicitaires, nous demandons votre consentement conformément au RGPD et au framework ATT d'Apple sur iOS. Vous pouvez modifier votre consentement à tout moment dans Paramètres → Confidentialité → Consentement publicitaire.</p>
+
+<h2>5. Stockage et sécurité</h2>
+<ul>
+  <li>Données hébergées sur Supabase (AWS, région EU)</li>
+  <li>Photos hébergées sur Cloudflare R2 (réseau global, edge caching)</li>
+  <li>Mots de passe hashés (bcrypt), jamais accessibles en clair</li>
+  <li>Communications chiffrées (TLS/HTTPS)</li>
+  <li>Accès protégé par Row Level Security (RLS) Postgres</li>
+  <li>Vérification JWT signée (ES256) sur tous les endpoints sensibles</li>
+  <li>Favoris et préférences également stockés localement (hors ligne)</li>
+</ul>
+
+<h2>6. Durée de conservation</h2>
+<ul>
+  <li>Compte utilisateur : jusqu'à suppression par l'utilisateur</li>
+  <li>Contributions (avis, lieux, photos) : indéfiniment (contenu public)</li>
+  <li>Géolocalisation : non stockée côté serveur (temps réel uniquement)</li>
+  <li>Données techniques / logs : 90 jours maximum</li>
+</ul>
+
+<h2>7. Vos droits (RGPD)</h2>
+<p>Conformément au RGPD, vous disposez des droits suivants :</p>
+<ul>
+  <li><strong>Accès</strong> : obtenir une copie de vos données personnelles</li>
+  <li><strong>Rectification</strong> : corriger vos données inexactes</li>
+  <li><strong>Suppression</strong> : supprimer votre compte et vos données (Paramètres → Confidentialité)</li>
+  <li><strong>Portabilité</strong> : recevoir vos données dans un format structuré</li>
+  <li><strong>Opposition</strong> : vous opposer au traitement pour la publicité personnalisée</li>
+  <li><strong>Limitation</strong> : demander la limitation du traitement</li>
+</ul>
+<p>Pour exercer vos droits, écrivez-nous à <a href="mailto:amineelmahlali5@gmail.com">amineelmahlali5@gmail.com</a> ou utilisez le bouton « Contacter le support » dans l'application. Délai de réponse : 30 jours. Vous pouvez également introduire une réclamation auprès de la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a>).</p>
+
+<h2>8. Mineurs</h2>
+<p>Trekxi ne s'adresse pas aux enfants de moins de 16 ans. Nous ne collectons pas sciemment de données de mineurs de moins de 16 ans. Si vous pensez qu'un mineur nous a transmis des données, contactez-nous pour suppression immédiate.</p>
+
+<h2>9. Modifications</h2>
+<p>Nous pouvons mettre à jour cette politique. Toute modification significative sera notifiée dans l'application. Date de dernière mise à jour : 18 avril 2026.</p>
+
+<h2>10. Contact</h2>
+<p>
+  Éditeur : Trekxi<br>
+  Pays : France<br>
+  Email : <a href="mailto:amineelmahlali5@gmail.com">amineelmahlali5@gmail.com</a>
+</p>
+
+</div>
+
+<!-- ─── ENGLISH ─────────────────────────────────────────────────── -->
+<div class="lang" id="lang-en">
+
+<h1><span>Trekxi</span> — Privacy Policy</h1>
+<p class="subtitle">Last updated: April 18, 2026</p>
+
+<p>Trekxi is a mobile tourism discovery app. This privacy policy describes the data we collect, why we collect it, and how we protect it.</p>
+
+<h2>1. Data collected</h2>
+
+<h3>User account</h3>
+<p>Email address, display name, profile picture (optional). Used for authentication, personalization, and contribution attribution.</p>
+
+<h3>Geolocation</h3>
+<p>GPS position (latitude, longitude). Used to display nearby places, local weather, and the map. Your location is only accessed while using the app (not in the background). You can deny this permission in your device settings.</p>
+
+<h3>Contributions</h3>
+<p>Place submissions, reviews, photos, reports. Used to enrich the community database.</p>
+
+<h3>Preferences</h3>
+<p>Language, measurement units, favorites, theme. Stored locally and/or on our servers for personalization.</p>
+
+<h3>Technical data</h3>
+<p>Device type, OS version, advertising identifier (if consented). Used for compatibility, diagnostics, and personalized advertising.</p>
+
+<h2>2. Legal basis (GDPR)</h2>
+<ul>
+  <li>Consent: personalized ads, push notifications, tracking (ATT on iOS)</li>
+  <li>Contract performance: account creation, app features</li>
+  <li>Legitimate interest: service improvement, abuse prevention, moderation</li>
+</ul>
+
+<h2>3. Third-party services</h2>
+<ul>
+  <li><strong>Supabase</strong> — backend, authentication, database (AWS, EU region)</li>
+  <li><strong>Cloudflare R2</strong> — user-submitted photo hosting</li>
+  <li><strong>Google AdMob</strong> — advertising (advertising ID if consented)</li>
+  <li><strong>Open-Meteo</strong> — weather data (GPS coordinates without user ID)</li>
+  <li><strong>Google OAuth / Apple Sign-in</strong> — authentication (email, name)</li>
+  <li><strong>Google Maps</strong> — map display on Android</li>
+</ul>
+
+<h2>4. Advertising and consent</h2>
+<p>Trekxi displays ads via Google AdMob. Before collecting advertising data, we request your consent per GDPR and Apple's ATT framework on iOS. You can change your consent at any time in Settings → Privacy → Ad consent.</p>
+
+<h2>5. Storage and security</h2>
+<ul>
+  <li>Data hosted on Supabase (AWS, EU region)</li>
+  <li>Photos hosted on Cloudflare R2 (global edge network)</li>
+  <li>Passwords hashed (bcrypt), never accessible in plain text</li>
+  <li>Communications encrypted (TLS/HTTPS)</li>
+  <li>Access protected by Postgres Row Level Security (RLS)</li>
+  <li>Signed JWT verification (ES256) on all sensitive endpoints</li>
+  <li>Favorites and preferences also stored locally (offline)</li>
+</ul>
+
+<h2>6. Data retention</h2>
+<ul>
+  <li>User account: until deletion by the user</li>
+  <li>Contributions (reviews, places, photos): indefinitely (public content)</li>
+  <li>Geolocation: not stored server-side (real-time only)</li>
+  <li>Technical data / logs: 90 days maximum</li>
+</ul>
+
+<h2>7. Your rights (GDPR)</h2>
+<p>Under the GDPR, you have the following rights:</p>
+<ul>
+  <li><strong>Access</strong>: obtain a copy of your personal data</li>
+  <li><strong>Rectification</strong>: correct inaccurate data</li>
+  <li><strong>Erasure</strong>: delete your account and data (Settings → Privacy)</li>
+  <li><strong>Portability</strong>: receive your data in a structured format</li>
+  <li><strong>Objection</strong>: object to processing for personalized advertising</li>
+  <li><strong>Restriction</strong>: request restriction of processing</li>
+</ul>
+<p>To exercise your rights, email us at <a href="mailto:amineelmahlali5@gmail.com">amineelmahlali5@gmail.com</a> or use the "Contact support" button in the app. Response time: 30 days. You may also file a complaint with the CNIL (French data protection authority, <a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a>).</p>
+
+<h2>8. Children</h2>
+<p>Trekxi is not intended for children under 16. We do not knowingly collect data from minors under 16. If you believe a minor has provided us with data, contact us for immediate deletion.</p>
+
+<h2>9. Changes</h2>
+<p>We may update this policy. Significant changes will be notified in the app. Last updated: April 18, 2026.</p>
+
+<h2>10. Contact</h2>
+<p>
+  Publisher: Trekxi<br>
+  Country: France<br>
+  Email: <a href="mailto:amineelmahlali5@gmail.com">amineelmahlali5@gmail.com</a>
+</p>
+
+</div>
+
+<div class="nav-links">
+  <a href="./">← Index</a>
+  <a href="./terms-of-use.html">Conditions d'utilisation / Terms of Use</a>
+</div>
+
+</div>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
+    document.getElementById('lang-' + lang).classList.add('active');
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    document.documentElement.lang = lang;
+    try { localStorage.setItem('trekxi-lang', lang); } catch (e) {}
+  }
+  // Load saved preference
+  try {
+    const saved = localStorage.getItem('trekxi-lang');
+    if (saved === 'en' || saved === 'fr') setLang(saved);
+    else if (navigator.language?.startsWith('en')) setLang('en');
+  } catch (e) {}
+</script>
 </body>
 </html>
